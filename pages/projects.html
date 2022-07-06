@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/theme/css/main.css" />
+    <link rel="stylesheet" href="/theme/css/custom.css" />
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"         media="(prefers-color-scheme: dark)"  href="/theme/css/dark-theme.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"         media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"          href="/theme/css/light-theme.css">
+
+
+</head>
+
+<body >
+    <div class="flex-wrapper">
+        <div class="everything-but-footer">
+            <div class="main-header">
+                <ul>
+                    <li><a href="/" class="pure-menu-heading pure-menu-link">Home</a></li> •
+                    <!-- <li><a href="/pages/about.html" class="pure-menu-heading pure-menu-link">About</a></li> • -->
+                    <li><a href="pages/projects.html" class="pure-menu-heading pure-menu-link">Projects</a></li> •
+                    <li><a href="#" class="pure-menu-heading pure-menu-link">Blog</a></li> •
+                    <li><a href="#" class="pure-menu-heading pure-menu-link">Quotes</a></li>
+                    <!-- <li><a href="https://github.com/Iwanttobeatuna" class="pure-menu-heading pure-menu-link">GitHub</a></li> • -->
+                    <!-- <li><a onclick="window.theme.switch(`dark`)">Dark</a></li>  -->
+                    <!-- <li><a href="https://www.linkedin.com/in/zad-chin/" class="pure-menu-heading pure-menu-link">LinkedIn</a></li> -->
+                </ul>
+            </div>
+            <!-- CONTENT-->
+<div class="page-container">
+    <div class="article-header-container">
+        <div class="background-image-container">
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>Research</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <!-- CSS Styles for Page -->
+
+<style>
+div.page-container.page-container {
+    margin-top: 0px;
+}
+div.article-header-container.article-header-container {
+    display: none;
+}
+</style>
+
+<!-- CSS Styles for the project cards -->
+
+<style>
+
+    .projects-container {
+        margin-bottom: 40px;
+    }
+
+    .project {
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05);
+        display: flex;
+        max-width: 100%;
+        overflow: hidden;
+        width: 100%;
+        transition: box-shadow 0.2s ease-in-out;
+    }
+
+    .dark-theme .project {
+        background-color: #2f3335;
+    }
+
+    .project:hover {
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.20);
+    }
+
+    .project.project h4 {
+        letter-spacing: 1px;
+        margin: 10px 0 5px 0;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .project.project h5 {
+        opacity: 0.6;
+        margin: 0;
+        letter-spacing: 1px;
+        font-style: italic;
+        font-size: 15px;
+    }
+
+    .project.project h6 {
+        opacity: 0.8;
+        margin: 0;
+        letter-spacing: 1px;
+        /* font-style: italic; */
+        font-size: 15px;
+    }
+
+    .project-preview {
+        /* color: #fff; */
+        width: 33%;
+        max-width: 250px;
+        background-color: #2A265F;
+        background-size: cover;
+        background-position: center;
+        padding: 0px;
+        opacity: 60%;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    .project:hover .project-preview {
+        opacity: 80%;
+    }
+
+    .project-info {
+        padding: 10px 30px;
+        position: relative;
+        width: 100%;
+    }
+
+    .btn {
+        background-color: #2A265F;
+        border: 0;
+        border-radius: 50px;
+        color: #fff;
+        padding: 12px 25px;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        letter-spacing: 1px;
+    }
+
+    .project-links {
+        margin-top: 10px;
+    }
+
+    .project-links.project-links a {
+        padding: 0px 40px 0px 0px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #2a265f;
+    }
+
+    .project-info p {
+        font-size: 14px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .project-preview {
+            display: none;
+        }
+    }
+
+
+
+</style>
+
+<h4>Projects</h4>
+<!-- TEMPLATE -->
+
+<!-- <div class="projects-container">
+    <div class="project">
+        <div class="project-preview" 
+             style="background-image: url('/assets/images/research/[FILENAME]')">
+        </div>
+        <div class="project-info">
+            <h4>Title</h4>
+            <h5>Authors</h5>
+            <h6>Venue</h6>
+            <div class="project-links">
+                <a href="#">Paper</a>
+                <a href="#">Project Page</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" 
+             style="background-image: url('/assets/images/research/4.gif')">
+        </div>
+        <div class="project-info">
+            <h4>MIMIC-III visualization</h4>
+            <h5>Fall 2022 - Now</h5>
+            <p>Webapp with Plotly Dash to visualize MIMIC-III data with different clustering algorithms to understand the underlying structure. Currently improving it with Javascript.</p>
+            <div class="project-links">
+                <a href="https://github.com/Iwanttobeatuna/mimic-app">Github</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" 
+             style="background-image: url('/assets/images/research/6.gif')">
+        </div>
+        <div class="project-info">
+            <h4>Machine learning in classifying UrbanSound 8k Dataset</h4>
+            <h5>Spring 2022</h5>
+            <p>Classifies urban sounds into its respective label, achieve 49% accuracy with Random Forest and Deep Learning, compared to 15% accuracy with Logistic Regression.</p>
+            <!-- <h6>:'(</h6> -->
+            <div class="project-links">
+                <a href="https://github.com/harvard-ml-courses/cs181-s22-homeworks/blob/main/Practical/practical_instructions.pdf">Prompt</a>
+                <a href="https://github.com/Iwanttobeatuna/CS181-practical-report">Paper</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" 
+             style="background-image: url('/assets/images/research/1.gif')">
+        </div>
+        <div class="project-info">
+            <h4>Automating the Industry Code Encoding Process with the National Institute for Occupational Safety and Health</h4>
+            <h5>Spring 2021</h5>
+            <p>Researched and developed a Natural language processing algorithm in classifying job-related injuries for NIOSH with 95% accuracy.</p>
+            <div class="project-links">
+                <a href="https://harvardt4sg.medium.com/automating-the-industry-code-encoding-process-with-the-national-institute-for-occupational-safety-c7160973db53">Article</a>
+                <a href="https://blogs.cdc.gov/niosh-science-blog/2021/08/19/machine-learning-t4sg/">CDC Science blog</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" 
+             style="background-image: url('/assets/images/research/2.gif')">
+        </div>
+        <div class="project-info">
+            <h4>Removing Ableist Language from Job Descriptions with the Department of Labor</h4>
+            <h5>Summer 2021</h5>
+            <p>Developed a website wrapper for the NLP model of the Department of Labor with Python Flask which featured in the US government Combating AI bias toolkit.</p>
+            <div class="project-links">
+                <a href="https://harvardt4sg.medium.com/removing-ableist-language-from-job-descriptions-with-the-department-of-labor-office-of-disability-2899dffa30d6">Article</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" 
+             style="background-image: url('/assets/images/research/3.gif')">
+        </div>
+        <div class="project-info">
+            <h4>MITxHarvard Women in AI website</h4>
+            <h5>Summer 2021</h5>
+            <p>Built a fully functioning website for MIT x Harvard Women in AI with HTML, CSS and Javascript.</p>
+            <div class="project-links">
+                <a href="https://mitharvardwai.github.io/index.html">Website</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" 
+             style="background-image: url('/assets/images/research/5.gif')">
+        </div>
+        <div class="project-info">
+            <h4>Trading Frog:</h4>
+            <h5>Fall 2020</h5>
+            <p>A design-centred, user-friendly finance web app that features up-to-date finance news from Yahoo Finance, constantly updated world indexes, as well as understandable statistics and interactive graphs upon searching a stock. It is coded with Python, HTML, CSS and JS. </p>
+            <div class="project-links">
+                <a href="https://youtu.be/SEZkTElBXn8">Video</a>
+                <a href="https://github.com/Iwanttobeatuna/Trading_Frog.git">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h4>Non-Profit Organizations / Volunteering</h4>
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" style="background-image: url('/assets/images/research/bawe.JPG')">
+        </div>
+        <div class="project-info">
+            <h4>Project BAWE</h4>
+            <h5>Founder</h5>
+            <p>A registered non-profit organization in Malaysia that aims to help students living in poverty in Malaysia by providing them tutorials every Saturday with volunteers from different colleges in Malaysia.
+
+                We benefited 50+ families in Malaysia and were featured by various press and media in Malaysia.</p>
+            <div class="project-links">
+                <a href="https://github.com/lukemelas/EfficientNet-PyTorch">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" style="background-image: url('/assets/images/research/base.jpeg')">
+        </div>
+        <div class="project-info">
+            <h4>Base Initiative</h4>
+            <h5>Founder</h5>
+            <p>A non-profit organization providing helping students from an underprivileged background in scholarship application. We have benefitted over 3000 + students over our 4 years of operation.</p>
+            <div class="project-links">
+                <a href="https://www.nst.com.my/education/2019/04/480279/base-scholarships">In the News</a>
+                <a href="https://baseinitiativemy.com/">Website</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="projects-container">
+    <div class="project">
+        <div class="project-preview" style="background-image: url('/assets/images/research/senate.jpeg')">
+        </div>
+        <div class="project-info">
+            <h4>Perak Parliament</h4>
+            <h5>Senator</h5>
+            <p>Advocated for youth literacy and food security in the State Parliament as the youngest senator.</p>
+            <div class="project-links">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <!-- <footer>
+        <div class="tags">
+            <a href="/tag/about.html">about</a>
+            <a href="/tag/luke.html">luke</a>
+            <a href="/tag/research.html">research</a>
+            <a href="/tag/publications.html">publications</a>
+            <a href="/tag/melas.html">melas</a>
+            <a href="/tag/kyriazi.html">kyriazi</a>
+            <a href="/tag/melas-kyriazi.html">melas-kyriazi</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1">
+                <div class="pure-g poster-info">
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="/author/luke-melas-kyriazi.html">Luke Melas-Kyriazi</a></h3>
+                        <p class="author-description">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+</div>
+
+            <!-- END CONTENT-->
+
+        </div>
+        <footer class="index-footer">
+            <a href="/" title="Luke Melas-Kyriazi">Zad Chin</a>
+
+            <!-- THEME COLOR -->
+            <!-- <a class="footer-dark-tag" href="javascript:void(0)" onclick="window.theme.switch(`dark`)">Dark</a>
+            <a class="footer-light-tag" href="javascript:void(0)" onclick="window.theme.switch(`light`)">Light</a> -->
+
+            <!-- data-enable-auto-detect-theme="True" -->
+            <script id="dark-theme-script" src="/theme/dark-theme/dark-theme.js"
+                data-enable-auto-detect-theme="false" data-default-theme="light"
+                type="text/javascript">
+            </script>
+            </p>
+
+        </footer>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-119150275-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>
