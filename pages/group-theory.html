@@ -201,7 +201,7 @@
 
                 The above proof was relatively short, but we cheated by using Euler's theorem and Euler's totient function. So to account for this, we will define Euler's totient function and prove Euler's theorem. This is a nice application of group theory!
 
-                <p><strong>Definition 1. 4 (Euler's Totient Function) </strong> For a given positive integer $n$, \emph{Euler's totient function}, $\varphi(n)$, counts the number of positive integers up to $n$ that are relatively prime to $n$, i.e. the number of integers $k\leq n$ such that $\gcd(n,k)=1$.</p>
+                <p><strong>Definition 1. 4 (Euler's Totient Function) </strong> For a given positive integer $n$, <em>Euler's totient function</em>, $\varphi(n)$, counts the number of positive integers up to $n$ that are relatively prime to $n$, i.e. the number of integers $k\leq n$ such that $\gcd(n,k)=1$.</p>
 
                 <p><strong>Theorem 1.5 (Euler's Theorem) </strong>
                   For any positive integer $a$ coprime to $n$; that is, with $\gcd(a,n)=1$, the congruence equality $$a^{\varphi(n)}\equiv 1\bmod n$$ holds.
@@ -323,7 +323,7 @@
                   \]
                   can be computed efficiently. In particular, it can be computed in $O(\log m)$ time.</p>
               
-                <p><em>Proof </em> We can use the \emph{double-and-add method}. First, express $m$ in binary as
+                <p><em>Proof </em> We can use the <em>double-and-add method</em>. First, express $m$ in binary as
                   \[
                   m=m_0+m_1\cdot 2+m_2\cdot 2^2+\cdots +m_r\cdot 2^r, \ \ m_0,\dots,m_r\in \{0,1\}.
                   \]
@@ -339,7 +339,7 @@
                     \[
                     E:y^2=x^3+Ax+B, \ \ A,B\in \mathbb{F}_p.
                     \]
-                    Let $S$ and $T$ be points in $E(\mathbb{F}_p)$. Find an integer $m$ so that $T=mS$. The smallest integer $m$ with this property is called the \emph{discrete logarithm} of $T$ with respect to $S$ and is denoted $m=\log_S(T)$. It might also be called the \emph{index} of $T$ relative to $S$.</p>
+                    Let $S$ and $T$ be points in $E(\mathbb{F}_p)$. Find an integer $m$ so that $T=mS$. The smallest integer $m$ with this property is called the <em>discrete logarithm</em> of $T$ with respect to $S$ and is denoted $m=\log_S(T)$. It might also be called the <em>index</em> of $T$ relative to $S$.</p>
                 
                     <p><strong>Conjecture 3.6 </strong> For general elliptic curves, the fastest method to solve ECDLP has time complexity $O(\sqrt{p})$, where the coefficients of the curve belong in $\mathbb{F}_p$.</p>
                     
