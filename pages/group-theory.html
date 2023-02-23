@@ -46,7 +46,7 @@
             <div class="background-image-small">
                 <div class="title-container">
                     <h1><strong>Group Theory and Its Applications</strong></h1>
-                    <p>Zad Chin, Jarell Cheong Tze Wen</p>
+                    <p>Zad Chin and Jarell Cheong Tze Wen</p>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
             <table>
               <tbody>
                 <tr>
-                  <td style="text-align:left"><a href= "#shuffle" style="text-decoration: none">$\circ$ Eighy Shuffles are Enough</a><strong> </strong></td>
+                  <td style="text-align:left"><a href= "#shuffle" style="text-decoration: none">$\circ$ Eight Shuffles are Enough</a><strong> </strong></td>
                 </tr>
                 <tr>
                   <td style="text-align:left"><a href= "#solverubiks" style="text-decoration: none">$\circ$ Solving the Rubik’s Cube</a><strong> </strong></td>
@@ -169,17 +169,17 @@
              To do this, we first define what it means to shuffle a deck of cards 
              in a precise way in the general case where we have $2n$ cards. Then, once we establish results in this more general case, the special case $2n=52$ follows.
             
-            <p><strong>Definition 1.1 (Outer Perfect Shuffle) </strong> In our deck of 
+            <p><strong>Definition 1.1 (Outer Perfect Shuffle). </strong> In our deck of 
               $2n$ cards, suppose that the cards are numbered $0,\dots,2n-1$. 
               Then, an <em>outer perfect shuffle</em> is a shuffle of the cards in which one first splits the pack into two halves of equal size, top and bottom, and then interleaves the two halves in such a way that the top card winds up on top and the bottom card winds up on the bottom.
             
-              <p>An example of a perfect 8 shuffles is as follow:</p>
+              <p>An example of a perfect shuffle for 8 cards is as follows:</p>
 
               <p><img src="../assets/images/blog/gif.gif" style="max-width: 100%" alt="Attention" id="fig:outer-perfect-shuffle"></p>
 
-              <p><strong>Theorem 1.2 </strong> The order of the outer perfect shuffle (i.e. the number of outer perfect shuffles needed to return a deck to its initial configuration) is the order of the element 2 in the multiplicative group of nonnegative integers $(\mathbb{Z}/2n\mathbb{Z})^\times$.</p>
+              <p><strong>Theorem 1.2. </strong> The order of the outer perfect shuffle (i.e. the number of outer perfect shuffles needed to return a deck to its initial configuration) is the order of the element 2 in the multiplicative group of nonnegative integers $(\mathbb{Z}/2n\mathbb{Z})^\times$.</p>
 
-              <p><em>Proof </em>In a single outer perfect shuffle, consider where each card is sent to: </p>
+              <p><em>Proof. </em>In a single outer perfect shuffle, consider where each card is sent to: </p>
 
               <!--List-->
               <ul>
@@ -189,37 +189,37 @@
                 
               </ul>
 
-              A simple example of the above proof is illustrated in the Figure <a href="fig:outer-perfect-shuffle">1</a> above.
+              A simple example of the above proof is illustrated in the figure above.
 
               <p>Thus, every card $k$ not at the bottom or top of the deck is sent to $2k\bmod 2n-1$. So if we let the order of the outer perfect shuffle be $r$, we find that after $r$ outer perfect shuffles, the card at position $k$ is sent to position $2^r k$, which needs to equal $k$ modulo $2n-1$. But for this to hold for all $k$, necessarily $2^r$ must equal 1 modulo $2n-1$, so $r$ is precisely $\mathrm{ord}(2)$ in $(\mathbb{Z}/2n\mathbb{Z})^\times$. We leave as an exercise to the reader to check that $r\geq \mathrm{ord}(2)$ and $r\leq \mathrm{ord}(2)$ from the deductions made so far. $\square$</p>
 
               <p>By the result above, we should be able to find the order of the outer perfect shuffles in the case $2n=52$. But for larger $n$, finding such an order might be tedious, so one might wonder if there is a simpler expression in terms of $n$ for the number of shuffles that is sufficient to return a deck of $2n$ cards to its original position. This upper bound for the number of shuffles needed is our next result.</p>
               
-              <p><strong>Theorem 1.3 </strong> After at most $2n-2$ repetitions of the outer shuffle, the cards are all in their original position. In other words, $\mathrm{ord}(2)\leq 2n-2$ for $2\in (\mathbb{Z}/2n\mathbb{Z})^\times$.</p>
+              <p><strong>Theorem 1.3. </strong> After at most $2n-2$ repetitions of the outer shuffle, the cards are all in their original position. In other words, $\mathrm{ord}(2)\leq 2n-2$ for $2\in (\mathbb{Z}/2n\mathbb{Z})^\times$.</p>
 
-              <p><em>Proof </em>Since $\gcd(2,2n-1)=1$, $2^{\varphi(2n-1)}\equiv 1\bmod 2n-1$ by Euler's theorem, where $\varphi$ is Euler's totient function. Moreover, $\varphi(2n-1)\leq 2n-2$ because there are no more than $2n-2$ integers less than $2n-1$ that are relatively prime to $2n-1$. So
+              <p><em>Proof. </em>Since $\gcd(2,2n-1)=1$, $2^{\varphi(2n-1)}\equiv 1\bmod 2n-1$ by Euler's theorem, where $\varphi$ is Euler's totient function. Moreover, $\varphi(2n-1)\leq 2n-2$ because there are no more than $2n-2$ integers less than $2n-1$ that are relatively prime to $2n-1$. So
                 $$
                 \mathrm{ord}(2)\leq \varphi(2n-1)\leq 2n-2. 
                 $$ $\square$</p>
 
                 The above proof was relatively short, but we cheated by using Euler's theorem and Euler's totient function. So to account for this, we will define Euler's totient function and prove Euler's theorem. This is a nice application of group theory!
 
-                <p><strong>Definition 1. 4 (Euler's Totient Function) </strong> For a given positive integer $n$, <em>Euler's totient function</em>, $\varphi(n)$, counts the number of positive integers up to $n$ that are relatively prime to $n$, i.e. the number of integers $k\leq n$ such that $\gcd(n,k)=1$.</p>
+                <p><strong>Definition 1.4 (Euler's Totient Function). </strong> For a given positive integer $n$, <em>Euler's totient function</em>, $\varphi(n)$, counts the number of positive integers up to $n$ that are relatively prime to $n$, i.e. the number of integers $k\leq n$ such that $\gcd(n,k)=1$.</p>
 
-                <p><strong>Theorem 1.5 (Euler's Theorem) </strong>
+                <p><strong>Theorem 1.5 (Euler's Theorem). </strong>
                   For any positive integer $a$ coprime to $n$; that is, with $\gcd(a,n)=1$, the congruence equality $$a^{\varphi(n)}\equiv 1\bmod n$$ holds.
                  </p>
 
-                 <p><em>Proof </em> The elements modulo $n$ that are relatively prime to $n$ form a group $G$ under multiplication that has order $\varphi(n)$. Because $a\in G$, Lagrange's theorem yields
+                 <p><em>Proof. </em> The elements modulo $n$ that are relatively prime to $n$ form a group $G$ under multiplication that has order $\varphi(n)$. Because $a\in G$, Lagrange's theorem yields
                   \[
                   a^{\varphi(n)}=a^{|G|}\equiv 1\bmod n.
                   \] $\square$ </p>
 
                   <p>Therefore, in the case $2n=52$, we know that a deck of 52 cards will return to its initial configuration after $52-2=50$ shuffles. But of course, by computing the order of $2$ in $(\mathbb{Z}/52\mathbb{Z})^\times$, we find that we can do much, much better.</p>
 
-                  <p><strong>Theorem 1.5 (8 Shuffles Are Enough) </strong> The order of 2 in $(\mathbb{Z}/52\mathbb{Z})^\times$ is 8.</p>
+                  <p><strong>Theorem 1.6 (8 Shuffles Are Enough). </strong> The order of 2 in $(\mathbb{Z}/52\mathbb{Z})^\times$ is 8.</p>
 
-                  <p><em>Proof </em> The only way to do this is explicit computation. Modulo 51, observe that
+                  <p><em>Proof. </em> The only way to do this is explicit computation. Modulo 51, observe that
                     \[
                     2^1\equiv 2, \ \ 2^2 \equiv 4, \ \ 2^3\equiv 8, \ \ 2^4 \equiv 16, \ 
                     \\ \ 2^5\equiv 32, \ \ 2^6\equiv 13, \ \ 2^7\equiv 27, \ \ 2^8\equiv 1.
@@ -227,7 +227,7 @@
                   
                     From this calculation, we find that 8 is the smallest positive integer so that $2^8\equiv 1\bmod 51$. In other words, the order of 2 in $(\mathbb{Z}/52\mathbb{Z})^\times$ is 8, as desired. $\square$ </p>
 
-                    <p> An example illustration of the proof is as follows, each bar represents card 1 - 52</p>
+                    <p> An illustration of this proof is as follows; the bars represent the positions that the cards get sent to.</p>
 
                     <p><img src="../assets/images/blog/shuffle.gif" alt="drawing" width="100%"/></p>
             </div>
@@ -243,7 +243,7 @@
             <h3 id="solverubiks">Solving the Rubik’s Cube<a class="anchor-link" href="#solverubiks">&#182;</a></h3>
 
             <p>To solve the Rubik's cube, one usually has to learn a certain core set of algorithms, called <em>macros</em>. Using group theory, we will show why these solutions do not come out of nowhere and are motivated by various concepts in group theory. </p>
-            <p><strong>Definition 2.1 (Singmaster Notation) </strong>For a fixed Rubik's cube and orientation, we use the following notation to refer to the appropriate sides of the cube:
+            <p><strong>Definition 2.1 (Singmaster Notation). </strong>For a fixed Rubik's cube and orientation, we use the following notation to refer to the appropriate sides of the cube:
             <ul>
                 <li> $F$: the front side of the cube.</li>
                 <li> $D$: the bottom side of the cube. </li>
@@ -254,21 +254,21 @@
               </ul>
             The same notation will be used to refer to face rotations. For instance, $F$ means to rotate the front face 90 degrees clockwise, while the corresponding counterclockwise rotation is denoted by the lowercase letter $f$ (same for other letters).
           
-          An illustration of the above notation is shown as below:</p>
+          An illustration of the above notation is shown below:</p>
             
             <p><img src="../assets/images/blog/STAT presentation.png" alt="drawing" width="100%"/></p>
 
-            <p><strong>Definition 2.2 (Rubik's Cube Group) </strong> The <em>Rubik's cube group</em>, denoted $\mathcal{R}$, is the group of all permutations of the Rubik's cube. The operation on this group is concatenation of the sequences of rotations of cube faces.</p>
+            <p><strong>Definition 2.2 (Rubik's Cube Group). </strong> The <em>Rubik's cube group</em>, denoted $\mathcal{R}$, is the group of all permutations of the Rubik's cube. The operation on this group is concatenation of the sequences of rotations of cube faces.</p>
               
             <p>The identity on this group is the "do nothing" permutation, associativity is obvious, and the inverse of any element $P_1\cdots P_n$ is $p_n\cdots p_1$, where lowercase $p_i$ is the operation needed to reverse the operation given by uppercase $P_i$. However, check that this group is <em>not</em> abelian! Moreover, there are 54 facets that can be arranged and rearranged through twisting and turning the faces of the cube, so $\mathcal{R}$ lies naturally embedded within the symmetric group on $54$ elements, $S_{54}$. This means that the elements in $\mathcal{R}$ can be given cycle notation, and therefore can be assigned a parity (even or odd) based on the number of 2-cycles in its decomposition.</p>
           
-            <p><strong>Theorem 2.3 </strong> The number of cubies (the mini blocks on the Rubik's cube) that are exchanged from an initial position of a Rubik's cube is always even.</p>
+            <p><strong>Theorem 2.3. </strong> The number of cubies (the mini blocks on the Rubik's cube) that are exchanged from an initial position of a Rubik's cube is always even.</p>
               
-            <p><em>Proof </em> Induct on the number of face rotations, $n$. After 0 moves on an unsolved cube, there are no cubies exchanged, and 0 is even. Moreover, any sequence of moves is composed of single faced turns. By assumption, after $n$ moves, the cube has an even number of cubies exchanged. Because the ($n+1$)-st move will be a face turn, there will be an even number of cubies flipped, and we are done. $\square$</p>
+            <p><em>Proof. </em> Induct on the number of face rotations, $n$. After 0 moves on an unsolved cube, there are no cubies exchanged, and 0 is even. Moreover, any sequence of moves is composed of single faced turns. By assumption, after $n$ moves, the cube has an even number of cubies exchanged. Because the ($n+1$)-st move will be a face turn, there will be an even number of cubies flipped, and we are done. $\square$</p>
           
             <p>In particular, the above result implies that there is no sequence of moves that will exchange a single pair of cubies. This means that when two cubies are exchanged, we know there must be other cubies exchanged as well. Eventually, we will get around this problem by using 3-cycles that will cycle 3 cubies, including the two that we want to exchange.</p>
           
-            <p><strong>Theorem 2.4 (Commutator) </strong> If $P$ and $M$ are any two cube moves, their <em>commutator</em>, denoted $[P,M]$ is the element $PMP^{-1}M^{-1}$. If $P$ and $M$ commute, their commutator is simply the identity; otherwise, we can measure the "relative commutativity" by the number of cubies changed by applying the commutator.</p>
+            <p><strong>Theorem 2.4 (Commutator). </strong> If $P$ and $M$ are any two cube moves, their <em>commutator</em>, denoted $[P,M]$ is the element $PMP^{-1}M^{-1}$. If $P$ and $M$ commute, their commutator is simply the identity; otherwise, we can measure the "relative commutativity" by the number of cubies changed by applying the commutator.</p>
           
             <p>The important thing about commutators is that it often gives rise to useful pairs of moves. Indeed, starting with a commutator at the base, one can create macros that do specific and important things like the following:
               <ul>
@@ -279,13 +279,13 @@
               </ul>
             </p>
 
-            <p><strong>Definition 2.5 (Conjugation) </strong> Let $M$ be some macro (sequence of cube moves) that performs a certain useful operation, say a three-cycle of edge pieces. Then, for some cube move $P$, $PMP^{-1}$ is defined to be the <em>conjugation</em> of $M$ by $P$. </p>
+            <p><strong>Definition 2.5 (Conjugation). </strong> Let $M$ be some macro (sequence of cube moves) that performs a certain useful operation, say a three-cycle of edge pieces. Then, for some cube move $P$, $PMP^{-1}$ is defined to be the <em>conjugation</em> of $M$ by $P$. </p>
             
             <p>Conjugating a group element is another very useful tool that will help us describe and build useful moves. For instance, when solving the cube, one straightforward approach is to solve it layer by layer. Once you get to the third (and last) layer, some of the edge pieces might be flipped the wrong way. We want to flip these pieces correctly, but leave the bottom two layers intact, and we can use conjugation to do so. Suppose we want to make the move consisting of the commutator $RUru$. This changes the top layer, but it also affects 2 pieces in the $R$ layer. We can fix this by conjugating by $F$ to get $FRUruf$. By first performing $F$ and then reversing this action by $f$ after the macro is performed, we ensure that only the top row pieces are affected. In general, once we find a sequence of moves that performs the operation we want, we can conjugate by the appropriate cube move to apply it to only the desired pieces. But why does conjugation do this?</p>
             
-            <p><strong>Theorem 2.6 </strong> If two elements in $S_n$ are conjugate, they have the same cycle lengths.</p>
+            <p><strong>Theorem 2.6. </strong> If two elements in $S_n$ are conjugate, they have the same cycle lengths.</p>
             
-            <p><em>Proof </em> It suffices to prove that if $\sigma = (a_1\ \cdots \ a_k)$ is a $k$-cycle, the conjugation $\tau\sigma\tau^{-1}$ is given by $(\tau(a_1)\ \cdots \ \tau(a_k))$. Indeed, for each $1\leq i\leq k$, we have
+            <p><em>Proof. </em> It suffices to prove that if $\sigma = (a_1\ \cdots \ a_k)$ is a $k$-cycle, the conjugation $\tau\sigma\tau^{-1}$ is given by $(\tau(a_1)\ \cdots \ \tau(a_k))$. Indeed, for each $1\leq i\leq k$, we have
               \[
               \tau(a_i)\mapsto a_i\mapsto a_{i+1}\mapsto \tau(a_{i+1}),
               \]
@@ -311,14 +311,14 @@
             
             <p>In this section, we will introduce elliptic curves and their group structure. Then, we will say a few words about how, and why, elliptic curves are so important in modern cryptography. We start, of course, by defining elliptic curves.</p>
 
-            <p><strong>Definition 2.1 </strong> An <em>elliptic curve</em> is a curve given by an equation of the form $y^2=x^3+Ax+B$, where the discriminant $\Delta=4A^3+27B^2$ is nonzero. For reasons to be explained later, we will also include an extra point, $\mathcal{O}$, that is ``at infinity,'' so that an elliptic curve $E$ is formally the set given below:
+            <p><strong>Definition 3.1. </strong> An <em>elliptic curve</em> is a curve given by an equation of the form $y^2=x^3+Ax+B$, where the discriminant $\Delta=4A^3+27B^2$ is nonzero. For reasons to be explained later, we will also include an extra point, $\mathcal{O}$, that is ``at infinity,'' so that an elliptic curve $E$ is formally the set given below:
               \[
               E=\{(x,y)\mid y^2=x^3+Ax+B\}\cup \{\mathcal{O}\}.
               \]</p>
               
               <p>
               The amazing thing about elliptic curves is that we can use <em>geometry</em> to make the points of an elliptic curve into a group! For any two points $P$ and $Q$ on $E$, we can draw a line $L$ through $P$ and $Q$. This line intersects the cubic curve $E$ in a third point, say $R$. We can then draw the vertical line through $R$, which will hit $E$ at another point. This last point will be what we define as the sum of $P$ and $Q$ on $E$, 
-              which we denote $P\oplus Q$. An illustration of Elliptic Curve is illustrated below. So, does $(E,\oplus)$ satisfy the group axioms?
+              which we denote $P\oplus Q$. An illustration of this addition is given below. So, does $(E,\oplus)$ satisfy the group axioms?
             </p>
 
             <p><img src="../assets/images/blog/curve.gif" alt="drawing" width="100%"/></p>
@@ -346,7 +346,7 @@
                 We impose that $\mathcal{O}$ is a point on every vertical line. Now, we have the following addition law.
             </p>
 
-            <p><strong>Theorem 3.2 (Addition on E) </strong> The addition law on $E$ has the following properties:
+            <p><strong>Theorem 3.2 (Addition on E). </strong> The addition law on $E$ has the following properties:
               <ul>
                   <li> $P\oplus\mathcal{O}=\mathcal{O}\oplus P=P$ for all $P\in E$. </li>
                   <li> $P\oplus (-P)=\mathcal{O}$ for all $P\in E$. </li>
@@ -355,48 +355,48 @@
               </ul>
               These properties of the addition law imply that $(E,\oplus)$ is an abelian group.</p>
 
-              <p><em>Proof </em> All of the group properties above are trivial to check (by geometric reasoning) 
+              <p><em>Proof. </em> All of the group properties above are trivial to check (by geometric reasoning) 
                 <em>except</em> the associative law (c). The associative law can be verified by a lengthy computation using 
                 explicit formulas (this can be an exercise for the reader!), 
                 or by using more advanced algebraic or analytic methods. $\square$</p>
 
                 Moreover, one can check that points with coordinates in a particular field form a subgroup of the full set of points. This leads to the following theorem.
 
-                <p><strong>Theorem 3.3 (Poincare, 1900) </strong> Let $K$ be a field, and suppose that an elliptic curve $E$ is given by an equation of the form $y^2=x^3+Ax+B$, $A,B\in K$. Set
+                <p><strong>Theorem 3.3 (Poincare, 1900). </strong> Let $K$ be a field, and suppose that an elliptic curve $E$ is given by an equation of the form $y^2=x^3+Ax+B$, $A,B\in K$. Set
                   \[
                   E(K)=\{(x,y)\in E\mid x,y\in K\}\cup\{\mathcal{O}\}.
                   \]
                   Then, $E(K)$ is a subgroup of the group of all points of $E$ under the addition $\oplus$.</p>
                   
-                <p>Now, we turn to how elliptic curves are used in cryptography. In cryptography, it is very desirable to have a function that is very easy to compute one way but very difficult to compute going the other way (i.e. a function with a hard "inverse problem"). In traditional RSA cryptography, multiplying two large primes is the easy problem and factoring a large number into primes is the hard problem</p>
+                <p>Now, we turn to how elliptic curves are used in cryptography. In cryptography, it is very desirable to have a function that is very easy to compute one way but very difficult to compute going the other way (i.e. a function with a hard "inverse problem"). In traditional RSA cryptography, multiplying two large primes is the easy problem and factoring a large number into primes is the hard problem.</p>
                   
                 <p>However, RSA cryptography is flawed because for large enough numbers, the easy problem gets difficult: multiplying two large numbers also takes a long time for large enough numbers! So we look to elliptic curves for a better function.</p>
                   
-                <p><strong>Theorem 3.4 </strong> Consider the finite group $E(\mathbb{F}_p)$. The repeated $m$-fold addition
+                <p><strong>Theorem 3.4. </strong> Consider the finite group $E(\mathbb{F}_p)$. The repeated $m$-fold addition
                   \[
                   mP=P\oplus \cdots \oplus P\in E(\mathbb{F}_p)
                   \]
                   can be computed efficiently. In particular, it can be computed in $O(\log m)$ time.</p>
               
-                <p><em>Proof </em> We can use the <em>double-and-add method</em>. First, express $m$ in binary as
+                <p><em>Proof. </em> We can use the <em>double-and-add method</em>. First, express $m$ in binary as
                   \[
                   m=m_0+m_1\cdot 2+m_2\cdot 2^2+\cdots +m_r\cdot 2^r, \\ \ m_0,\dots,m_r\in \{0,1\}.
                   \]
                   Then, $2^kP=2\cdots 2P$ requires only $k$ doublings, and $mP$ can be computed as 
                   \[
-                  mP=m_0P+m_1\cdot 2P+m_2\cdot 2^2P+\cdots+m_r\cdot 2^rP.
+                  mP=m_0P\oplus m_1\cdot 2P\oplus m_2\cdot 2^2P\oplus\cdots\oplus m_r\cdot 2^rP.
                   \]
                   Thus, on average, it takes approximately $\log_2(m)$ doublings and $\frac{1}{2}\log_2(m)$ additions to compute $mP$. It follows that $mP$ has time complexity $O(\log m)$. $\square$</p>
                   
                   The inverse problem to the computation is called the elliptic curve discrete logarithm problem, or ECDLP for short. This problem is defined precisely below.
 
-                  <p><strong>Definition 3.5 (ECDLP) </strong> Let $E$ be an elliptic curve defined over a finite field $\mathbb{F}_p$.
+                  <p><strong>Definition 3.5 (ECDLP). </strong> Let $E$ be an elliptic curve defined over a finite field $\mathbb{F}_p$.
                     \[
                     E:y^2=x^3+Ax+B, \ \ A,B\in \mathbb{F}_p.
                     \]
                     Let $S$ and $T$ be points in $E(\mathbb{F}_p)$. Find an integer $m$ so that $T=mS$. The smallest integer $m$ with this property is called the <em>discrete logarithm</em> of $T$ with respect to $S$ and is denoted $m=\log_S(T)$. It might also be called the <em>index</em> of $T$ relative to $S$.</p>
                 
-                    <p><strong>Conjecture 3.6 </strong> For general elliptic curves, the fastest method to solve ECDLP has time complexity $O(\sqrt{p})$, where the coefficients of the curve belong in $\mathbb{F}_p$.</p>
+                    <p><strong>Conjecture 3.6. </strong> For general elliptic curves, the fastest method to solve ECDLP has time complexity $O(\sqrt{p})$, where the coefficients of the curve belong in $\mathbb{F}_p$.</p>
                     
                     <p>To this day, the conjecture above holds; that is, there is no <em>known</em> method to solve ECDLP that is faster than a method with time complexity $O(\sqrt{p})$. Therefore, from a cryptographic perspective, the ``easy problem'' in elliptic curve cryptography can be solved rather quickly, even for large $m$, while the ``hard problem'' in elliptic curve cryptography is intractable for large $p$, say $p\approx 2^{160}$. Hence, cryptographic constructions based on ECDLP have smaller keys and smaller message blocks.</p>
                   </div>
@@ -411,20 +411,20 @@
           <div class="text_cell_render border-box-sizing rendered_html">
             <h3 id="58abel">The 5/8 Bound for Abelianess<a class="anchor-link" href="#58abel">&#182;</a></h3>
             
-            <p>Suppose that $G$ is a finite nonabelian group. Pick two elements $a,b\in G$ uniformly at random. What is the probability that they commute, i.e. that $ab=ba$? In this section, we will place an upper bound on this probability. The original title for our presentation was supposed to be ``group theory and its applications to probability and statistics,'' so we felt that it was important to include <em>at least some</em> probability in our final presentation, which has morphed greatly from what it was supposed to be initially. So we answer this question, starting with the lemma below.</p>
+            <p>Suppose that $G$ is a finite nonabelian group. Pick two elements $a,b\in G$ uniformly at random. What is the probability that they commute, i.e. that $ab=ba$? In this section, we will place an upper bound on this probability. The original title for our presentation was supposed to be "group theory and its applications to probability and statistics," so we felt that it was important to include <em>at least some</em> probability in our final presentation, which has morphed greatly from what it was supposed to be initially. So we answer this question, starting with the lemma below.</p>
             
-            <p><strong>Lemma 4.1 </strong> Let $Z(G)=\{a\in G\mid ax=xa\ \forall x\in G\}$ be the center of $G$. Given that $G$ is nonabelian, the quotient $G/Z(G)$ is not a cyclic group. </p>
+            <p><strong>Lemma 4.1. </strong> Let $Z(G)=\{a\in G\mid ax=xa\ \forall x\in G\}$ be the center of $G$. Given that $G$ is nonabelian, the quotient $G/Z(G)$ is not a cyclic group. </p>
               
-            <p><em>Proof </em> Check, as an exercise, that $Z(G)$ is a normal subgroup of $G$, so $G/Z(G)$ is well-defined. Then, suppose, for contradiction, that $G/Z(G)$ is cyclic. So each element in $G/Z(G)$ can be written as $g^iZ(G)$ for some $i$. Since the cosets $g^i Z(G)$ partition $G$, we can write $a\in G$ as $a=g^i x$ and $b\in G$ as $g^j y$ for $x,y\in Z(G)$. But
+            <p><em>Proof. </em> Check, as an exercise, that $Z(G)$ is a normal subgroup of $G$, so $G/Z(G)$ is well-defined. Then, suppose, for contradiction, that $G/Z(G)$ is cyclic. So each element in $G/Z(G)$ can be written as $g^iZ(G)$ for some $i$. Since the cosets $g^i Z(G)$ partition $G$, we can write $a\in G$ as $a=g^i x$ and $b\in G$ as $g^j y$ for $x,y\in Z(G)$. But
               \[
               ab=g^ixg^jy=g^{i+j}xy=g^{j+i}y \\ =g^jg^iyx=g^jyg^ix=ba,
               \]
               so $G$ is abelian, contradicting our initial assumption that $G$ was nonabelian. </p>
 
             
-              <p><strong>Theorem 4.2 </strong> The probability that two elements of $G$, picked uniformly at random, commute is at most $5/8$.</p>
+              <p><strong>Theorem 4.2. </strong> The probability that two elements of $G$, picked uniformly at random, commute is at most $5/8$.</p>
               
-              <p><em>Proof </em>Let $C=\{(a,b)\in G\times G\mid ab=ba\}$. By the naive definition of probability, it suffices to show that $|C|/|G|^2\leq 5/8$, i.e. $|C|\leq (5/8)|G|^2$. Recall, or check as an exercise, that all groups of order 1, 2, and 3 are cyclic, so since $G/Z(G)$ is not cyclic, it has order at least 4, so $|G/Z(G)|\geq 4$, i.e. $|Z(G)|\leq |G|/4$.
+              <p><em>Proof. </em>Let $C=\{(a,b)\in G\times G\mid ab=ba\}$. By the naive definition of probability, it suffices to show that $|C|/|G|^2\leq 5/8$, i.e. $|C|\leq (5/8)|G|^2$. Recall, or check as an exercise, that all groups of order 1, 2, and 3 are cyclic, so since $G/Z(G)$ is not cyclic, it has order at least 4, so $|G/Z(G)|\geq 4$, i.e. $|Z(G)|\leq |G|/4$.
 
                 Now, we perform direct counting. Let one element in either component of an ordered pair in $C$ be $x$. If $x\in Z(G)$, $x$ commutes with every other element in $G$, so there are $|Z(G)||G|$ different ordered pairs in $C$ counted in this case by the multiplication rule. If $x\notin Z(G)$, the elements of $G$ that commute with $x$ form a proper subgroup of $G$ (since $G$ is nonabelian), so by Lagrange's theorem, there are at most $(|G|-|Z(G)|)|G|/2$ different ordered pairs in $C$ counted. Thus,
                 \begin{align*}
@@ -435,9 +435,9 @@
                 \end{align*} $\square$ </p>
 
                 
-                <p><strong>Theorem 4.3 </strong> The bound presented above is optimal, i.e. there exists a nonabelian finite group for which $|C|=(5/8)|G|^2$</p>
+                <p><strong>Theorem 4.3. </strong> The bound presented above is optimal, i.e. there exists a nonabelian finite group for which $|C|=(5/8)|G|^2$.</p>
                 
-                <p><em>Proof </em> Consider the quaternion group $Q_8$ given by the generators and relations
+                <p><em>Proof. </em> Consider the quaternion group $Q_8$ given by the generators and relations
                   \[
                   \langle {\pm 1,\pm i, \pm j, \pm k\mid i^2=j^2=k^2=-1, \\ ij=-ji=k,jk=-kj=i,ki=-ik=j \rangle}.
                   \]
@@ -452,12 +452,12 @@
 
                    <!-- <h5><strong>A illustration via Monte Carlo</strong></h5> -->
 
-                   We can also use Monte Carlo to estimate the probability that two elements of $G$ commute. We will use the group $Q_8$ as an example.
+                   We can also use Monte Carlo simulation to estimate the probability that two elements of $G$ commute. We will use the group $Q_8$ as an example.
 
                    The result is after 1000 iterations, we see that the probability of commutative elements is approximately 0.652, which is what we found mathematically.
                 
                     <p><img src="../assets/images/blog/commuting_pairs.gif" alt="drawing" width="100%" style="align-content: center; justify-content: center; text-align: center;"/></p>
-                    <p><em>Note: It takes approximately 1 minute for the simulation to finish running.</em></p>
+                    <p><em>Note: It takes approximately one or more minutes for this simulation to finish running.</em></p>
             </div>
         </div>
       </div>
@@ -473,17 +473,17 @@
                 <h4>Seven Shuffles Are Enough (To Be Random)</h4>
                 <p>We have shown that eight perfect shuffles return a deck of cards to its initial position, but humans are terrible at perfect shuffles. However, that might turn out to be a good thing, since in most cases, we would like a deck of cards to be as close to uniformly random as possible instead. It turns out that seven (imperfect) riffle shuffles are enough for a deck of cards to be essentially random.</p>
 
-                <p><strong>Theorem 5.1 (7 Shuffles Are Enough) </strong> Imperfect shuffles can be modeled with the GSR measure $Q^{*k}$, and repeated such shuffles converges to the uniform distribution $U$. When $n=52$, the total variation distance $|| Q^{*k}-U || \approx 0.334$.</p>
+                <p><strong>Theorem 5.1 (7 Shuffles Are Enough). </strong> Imperfect shuffles can be modeled with the GSR measure $Q^{*k}$, and repeated such shuffles converges to the uniform distribution $U$. When $n=52$, the total variation distance $|| Q^{*k}-U || \approx 0.334$.</p>
 
-                <p>In 1986, Persi Diaconis and David Aldous presented a rigorous argument (treating repeated shuffling as a random walk on $S_n$) for why it takes just seven imperfect shuffles to mix a deck of cards thoroughly. Fewer are not enough and more do not significantly improve the mixing! Details about how this notion is made precise and proofs can be found in the paper <a href ="https://statweb.stanford.edu/~cgates/PERSI/papers/aldous86.pdf"> Shuffling Cards and Stopping Times (1986)</a></p>
+                <p>In 1986, Persi Diaconis and David Aldous presented a rigorous argument (treating repeated shuffling as a random walk on $S_n$) for why it takes just seven imperfect shuffles to mix a deck of cards thoroughly. Fewer are not enough and more do not significantly improve the mixing! Details about how this notion is made precise and proofs can be found in the paper <a href ="https://statweb.stanford.edu/~cgates/PERSI/papers/aldous86.pdf"> Shuffling Cards and Stopping Times (1986)</a>.</p>
               
                 <h4>Analyzing Ranked Data</h4>
 
                 <p>How should one analyze ranked data? The naive thing to do is to consider simple averages like the proportion of times each item is ranked first (or last) and the average rank for each item. These are the first-order statistics: linear combinations of the number of times $i$ was ranked in position $j$. However, these statistics are not always representative: if some data are only partially ranked, how should we account for these situations and get a more comprehensive analysis of the data? A second-order statistic, proposed by Persi Diaconis in 1987, works as follows.</p>
               
-                <p><strong>Theorem 5.2 </strong> Suppose that there are $n$ items to be ranked. Data can be regarded as a function $f$ on $S_n$, with $f(\pi)$ being the number of rankers choosing ranking $\pi$. There is a natural decomposition of the space of all such functions into orthogonal subspaces invariant under relabeling.</p>
+                <p><strong>Theorem 5.2. </strong> Suppose that there are $n$ items to be ranked. Data can be regarded as a function $f$ on $S_n$, with $f(\pi)$ being the number of rankers choosing ranking $\pi$. There is a natural decomposition of the space of all such functions into orthogonal subspaces invariant under relabeling.</p>
 
-                <p>With this, we can then use spectral analysis of time series to further decompose these subspaces into projections. Details can be found in the paper <a href ="https://drive.google.com/file/d/1qybD14UTNc1w4839siAYh96I5YFGiT2D/view?usp=sharing"> A Generalization of Spectral Analysis With Applications to Ranked Data (1987).</a></p>
+                <p>With this, we can then use spectral analysis of time series to further decompose these subspaces into projections. Details can be found in the paper <a href ="https://drive.google.com/file/d/1qybD14UTNc1w4839siAYh96I5YFGiT2D/view?usp=sharing"> A Generalization of Spectral Analysis With Applications to Ranked Data (1987)</a>.</p>
               </div>
             </div>
           </div>
