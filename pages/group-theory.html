@@ -45,7 +45,7 @@
         <div class="background-image-container">
             <div class="background-image-small">
                 <div class="title-container">
-                    <h1>Group Theory and Its Applications</h1>
+                    <h1><strong>Group Theory and Its Applications</strong></h1>
                     <p>Zad Chin, Jarell Cheong Tze Wen</p>
                 </div>
             </div>
@@ -143,6 +143,9 @@
                 <tr>
                   <td style="text-align:left"><a href= "#other" style="text-decoration: none">$\circ$ Other Applications of Groups </a><strong> </strong></td>
                 </tr>
+                <tr>
+                  <td style="text-align:left"><a href= "#bib" style="text-decoration: none">$\circ$ References </a><strong> </strong></td>
+                </tr>
               </tbody>
             </table>
             
@@ -214,7 +217,7 @@
 
                   <p>Therefore, in the case $2n=52$, we know that a deck of 52 cards will return to its initial configuration after $52-2=50$ shuffles. But of course, by computing the order of $2$ in $(\mathbb{Z}/52\mathbb{Z})^\times$, we find that we can do much, much better.</p>
 
-                  <p><strong>Theorem 1.5 (8 Shuffles Are Enough) </strong></p>
+                  <p><strong>Theorem 1.5 (8 Shuffles Are Enough) </strong> The order of 2 in $(\mathbb{Z}/52\mathbb{Z})^\times$ is 8.</p>
 
                   <p><em>Proof </em> The only way to do this is explicit computation. Modulo 51, observe that
                     \[
@@ -238,8 +241,60 @@
         <div class="inner_cell">
           <div class="text_cell_render border-box-sizing rendered_html">
             <h3 id="solverubiks">Solving the Rubik’s Cube<a class="anchor-link" href="#solverubiks">&#182;</a></h3>
-            <p><img src="../assets/images/blog/under.jpeg" alt="drawing" width="100%"/></p>
 
+            <p>To solve the Rubik's cube, one usually has to learn a certain core set of algorithms, called <em>macros</em>. Using group theory, we will show why these solutions do not come out of nowhere and are motivated by various concepts in group theory. </p>
+            <p><strong>Definition 2.1 (Singmaster Notation) </strong>For a fixed Rubik's cube and orientation, we use the following notation to refer to the appropriate sides of the cube:
+            <ul>
+                <li> $F$: the front side of the cube.</li>
+                <li> $D$: the bottom side of the cube. </li>
+                <li> $L$: the left side of the cube. </li>
+                <li> $R$: the right side of the cube. </li>
+                <li> $U$: the upper side of the cube.</li>
+                <li> $B$: the back side of the cube.</li>
+              </ul>
+            The same notation will be used to refer to face rotations. For instance, $F$ means to rotate the front face 90 degrees clockwise, while the corresponding counterclockwise rotation is denoted by the lowercase letter $f$ (same for other letters).
+          
+          An illustration of the above notation is shown as below:</p>
+            
+            <p><img src="../assets/images/blog/STAT presentation.png" alt="drawing" width="100%"/></p>
+
+            <p><strong>Definition 2.2 (Rubik's Cube Group) </strong> The <em>Rubik's cube group</em>, denoted $\mathcal{R}$, is the group of all permutations of the Rubik's cube. The operation on this group is concatenation of the sequences of rotations of cube faces.</p>
+              
+            <p>The identity on this group is the "do nothing" permutation, associativity is obvious, and the inverse of any element $P_1\cdots P_n$ is $p_n\cdots p_1$, where lowercase $p_i$ is the operation needed to reverse the operation given by uppercase $P_i$. However, check that this group is <em>not</em> abelian! Moreover, there are 54 facets that can be arranged and rearranged through twisting and turning the faces of the cube, so $\mathcal{R}$ lies naturally embedded within the symmetric group on $54$ elements, $S_{54}$. This means that the elements in $\mathcal{R}$ can be given cycle notation, and therefore can be assigned a parity (even or odd) based on the number of 2-cycles in its decomposition.</p>
+          
+            <p><strong>Theorem 2.3 </strong> The number of cubies (the mini blocks on the Rubik's cube) that are exchanged from an initial position of a Rubik's cube is always even.</p>
+              
+            <p><em>Proof </em> Induct on the number of face rotations, $n$. After 0 moves on an unsolved cube, there are no cubies exchanged, and 0 is even. Moreover, any sequence of moves is composed of single faced turns. By assumption, after $n$ moves, the cube has an even number of cubies exchanged. Because the ($n+1$)-st move will be a face turn, there will be an even number of cubies flipped, and we are done. $\square$</p>
+          
+            <p>In particular, the above result implies that there is no sequence of moves that will exchange a single pair of cubies. This means that when two cubies are exchanged, we know there must be other cubies exchanged as well. Eventually, we will get around this problem by using 3-cycles that will cycle 3 cubies, including the two that we want to exchange.</p>
+          
+            <p><strong>Theorem 2.4 (Commutator) </strong> If $P$ and $M$ are any two cube moves, their <em>commutator</em>, denoted $[P,M]$ is the element $PMP^{-1}M^{-1}$. If $P$ and $M$ commute, their commutator is simply the identity; otherwise, we can measure the "relative commutativity" by the number of cubies changed by applying the commutator.</p>
+          
+            <p>The important thing about commutators is that it often gives rise to useful pairs of moves. Indeed, starting with a commutator at the base, one can create macros that do specific and important things like the following:
+              <ul>
+                <li>$FUDLLUUDDRU$ flips exactly one edge cubie on the top face;</li>
+                <li>$rDRFDf$ twists one cubie on a face;</li>
+                <li>$FF$ swaps a pair of edges in a slice;</li>
+                <li>$rDR$ cycles three corners.</li>
+              </ul>
+            </p>
+
+            <p><strong>Definition 2.5 (Conjugation) </strong> Let $M$ be some macro (sequence of cube moves) that performs a certain useful operation, say a three-cycle of edge pieces. Then, for some cube move $P$, $PMP^{-1}$ is defined to be the <em>conjugation</em> of $M$ by $P$. </p>
+            
+            <p>Conjugating a group element is another very useful tool that will help us describe and build useful moves. For instance, when solving the cube, one straightforward approach is to solve it layer by layer. Once you get to the third (and last) layer, some of the edge pieces might be flipped the wrong way. We want to flip these pieces correctly, but leave the bottom two layers intact, and we can use conjugation to do so. Suppose we want to make the move consisting of the commutator $RUru$. This changes the top layer, but it also affects 2 pieces in the $R$ layer. We can fix this by conjugating by $F$ to get $FRUruf$. By first performing $F$ and then reversing this action by $f$ after the macro is performed, we ensure that only the top row pieces are affected. In general, once we find a sequence of moves that performs the operation we want, we can conjugate by the appropriate cube move to apply it to only the desired pieces. But why does conjugation do this?</p>
+            
+            <p><strong>Theorem 2.6 </strong> If two elements in $S_n$ are conjugate, they have the same cycle lengths.</p>
+            
+            <p><em>Proof </em> It suffices to prove that if $\sigma = (a_1\ \cdots \ a_k)$ is a $k$-cycle, the conjugation $\tau\sigma\tau^{-1}$ is given by $(\tau(a_1)\ \cdots \ \tau(a_k))$. Indeed, for each $1\leq i\leq k$, we have
+              \[
+              \tau(a_i)\mapsto a_i\mapsto a_{i+1}\mapsto \tau(a_{i+1}),
+              \]
+              so the action on $\{\tau(a_i)\}$ is as claimed. And for any other element, say $b$, we get
+              \[
+              \tau(b)\mapsto b\mapsto b\mapsto \tau(b). 
+              \] $\square$</p>
+
+              <p>Thus, any macro and its conjugate have the same cycle structures. The only difference are the actual pieces involved in the cycles. Conjugating by an appropriate element is equivalent to selecting the most convenient pieces in the cycle.</p>
           </div>
         </div>
       </div>
@@ -395,7 +450,7 @@
                    & =\frac{5}{8} |Q_8|^{2}.
                    \end{align*} $\square$ </p>
 
-                   <h5><strong>A illustration via Monte Carlo</strong></h5>
+                   <!-- <h5><strong>A illustration via Monte Carlo</strong></h5> -->
 
                    We can also use Monte Carlo to estimate the probability that two elements of $G$ commute. We will use the group $Q_8$ as an example.
 
@@ -415,8 +470,56 @@
             <div class="inner_cell">
               <div class="text_cell_render border-box-sizing rendered_html">
                 <h3 id="others">Other Applications of Group Theory<a class="anchor-link" href="#Conclusion">&#182;</a></h3>
-                <p><img src="../assets/images/blog/under.jpeg" alt="drawing" width="100%"/></p>
+                <h4>Seven Shuffles Are Enough (To Be Random)</h4>
+                <p>We have shown that eight perfect shuffles return a deck of cards to its initial position, but humans are terrible at perfect shuffles. However, that might turn out to be a good thing, since in most cases, we would like a deck of cards to be as close to uniformly random as possible instead. It turns out that seven (imperfect) riffle shuffles are enough for a deck of cards to be essentially random.</p>
 
+                <p><strong>Theorem 5.1 (7 Shuffles Are Enough) </strong> Imperfect shuffles can be modeled with the GSR measure $Q^{*k}$, and repeated such shuffles converges to the uniform distribution $U$. When $n=52$, the total variation distance $|| Q^{*k}-U || \approx 0.334$.</p>
+
+                <p>In 1986, Persi Diaconis and David Aldous presented a rigorous argument (treating repeated shuffling as a random walk on $S_n$) for why it takes just seven imperfect shuffles to mix a deck of cards thoroughly. Fewer are not enough and more do not significantly improve the mixing! Details about how this notion is made precise and proofs can be found in the paper <a href ="https://statweb.stanford.edu/~cgates/PERSI/papers/aldous86.pdf"> Shuffling Cards and Stopping Times (1986)</a></p>
+              
+                <h4>Analyzing Ranked Data</h4>
+
+                <p>How should one analyze ranked data? The naive thing to do is to consider simple averages like the proportion of times each item is ranked first (or last) and the average rank for each item. These are the first-order statistics: linear combinations of the number of times $i$ was ranked in position $j$. However, these statistics are not always representative: if some data are only partially ranked, how should we account for these situations and get a more comprehensive analysis of the data? A second-order statistic, proposed by Persi Diaconis in 1987, works as follows.</p>
+              
+                <p><strong>Theorem 5.2 </strong> Suppose that there are $n$ items to be ranked. Data can be regarded as a function $f$ on $S_n$, with $f(\pi)$ being the number of rankers choosing ranking $\pi$. There is a natural decomposition of the space of all such functions into orthogonal subspaces invariant under relabeling.</p>
+
+                <p>With this, we can then use spectral analysis of time series to further decompose these subspaces into projections. Details can be found in the paper <a href ="https://drive.google.com/file/d/1qybD14UTNc1w4839siAYh96I5YFGiT2D/view?usp=sharing"> A Generalization of Spectral Analysis With Applications to Ranked Data (1987).</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!--Bibligraphy-->
+          <div class="cell border-box-sizing text_cell rendered">
+            <div class="prompt input_prompt">
+            </div>
+            <div class="inner_cell">
+              <div class="text_cell_render border-box-sizing rendered_html">
+                <h3 id="bib">References<a class="anchor-link" href="#bib">&#182;</a></h3>
+                
+                <p>[1] D. Aldous and P. Diaconis. Shuffling cards and stopping times. <em> The American
+                  Mathematical Monthly, 93(5):333–348, 1986.</em></p>
+
+                <p>[2] L. Daniels. Group theory and the rubik’s cube. <em> Lakehead University, 2014</em></p>
+
+                <p>[3] P. Diaconis. A generalization of spectral analysis with application to ranked
+                  data. <em>The Annals of Statistics, </em>pages 949–979, 1989</p>
+                
+                <p>[4] P. Diaconis. Mathematical developments from the analysis of riffle shuffling <em>Groups, combinatorics & geometry (Durham, 2001), </em> pages 73–97, 2003.</p>
+              
+                <p>[5] P. Diaconis, R. Graham, and W. M. Kantor. The mathematics of perfect
+                  shuffles. <em>Advances in applied mathematics, </em> 4(2):175–196, 1983.</p>
+
+                <p>[6] J. Li, E. Demaine, and M. Gymrek. The mathematics of the rubik’s cube, 2009 </p>
+
+                <p>[7] J. H. Silverman. An introduction to the theory of elliptic curves. <em>Brown
+                  University. </em> June, 19:2006, 2006.</p>
+                
+                <p>[8] C. Sugar and E. Wepsic. Some upper bounds for commutativity and cyclicity
+                  measures in finite groups. <em> Mathematical Sciences Technical Reports (MSTR) </em>,
+                  1992.</p>
+                
+                <p>[9] N. Sullivan. A (relatively easy to understand) primer on elliptic curve cryptography. <em>Cloudfare blog</em>, 2013.
+                  </p>
               </div>
             </div>
           </div>
